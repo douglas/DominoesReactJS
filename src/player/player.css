@@ -2,10 +2,10 @@
     position: fixed;
     bottom: 0;
     left: 50%;
-    height: 140px;
+    height: 193px;
     background-color: rgb(151, 178, 205);
     border-radius: 15px 15px 0 0;
-    font-size: 17px;
+    font-size: 15px;
     display: flex;
     align-items: flex-end;
     padding: 8px 8px 25px 8px;
@@ -18,7 +18,7 @@
 
 .player .hand-deck {
     height: 110%;
-    width: 450px;
+    width: 90%;
     display: flex;
     overflow-x: scroll;
 }
@@ -42,8 +42,10 @@
 }
 
 .player .hand-deck .tile {
-    margin: 0 2px 0 2px;
+    margin: 0 5px 0 5px;
     cursor: pointer;
+    min-width: 110px;
+    min-height: 135px;
 }
 
 .player .details {
@@ -51,9 +53,9 @@
     flex-direction: column;
     justify-content: space-around;
     height: 100%;
-    width: 100px;
+    min-width: 160px;
     margin-right: 10px;
-    font-size: 17px;
+    font-size: 15px;
     text-align: center;
 }
 

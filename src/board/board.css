@@ -1,8 +1,8 @@
 .board {
     font-family: Verdana,Geneva,sans-serif;
     display: grid;
-    grid-template-columns: repeat(20, 110px);
-    grid-template-rows: repeat(20, 110px);
+    grid-template-columns: repeat(20, 210px);
+    grid-template-rows: repeat(20, 145px);
     width: 2200px;
     height: 2200px;
 }

@@ -1,13 +1,13 @@
 .dot-container {
-    display: grid;
-    grid-template-columns: repeat(3, 10px);
+    display: flex;
+    /* grid-template-columns: repeat(3, 10px);
     grid-column-gap: 6px;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
 
 .tile[direction="vertical"] .dot-container {
-    width: 50px;
+    /* width: 50px; */
     height: 50%;
 }
 

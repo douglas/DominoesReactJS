@@ -6,7 +6,7 @@
     grid-template-rows: repeat(2, auto);
     position: fixed;
     top: 0;
-    left: 50%;
+    left: 90%;
     background-color: rgb(171, 175, 179);
     border-radius: 0 0 15px 15px;
     font-size: 17px;

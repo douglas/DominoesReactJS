@@ -14,7 +14,7 @@ class Game extends Component {
   constructor (props) {
     super(props);
     const emptyBankTiles = this.initTilesBank();
-    const initializedPlayers = [{name: 'Player 1', tiles: [], score: 0, drawsCount: 0, turnTimesSeconds: []}];
+    const initializedPlayers = [{name: 'Jogador 1', tiles: [], score: 0, drawsCount: 0, turnTimesSeconds: []}];
     const {bankTiles, players} = this.setPlayerInitTiles(initializedPlayers, emptyBankTiles);
 
     this.state = {
@@ -160,7 +160,7 @@ class Game extends Component {
 
   resetGame () {
     const emptyBankTiles = this.initTilesBank();
-    const initializedPlayers = [{name: 'Player 1', tiles: [], score: 0, drawsCount: 0, turnTimesSeconds: []}];
+    const initializedPlayers = [{name: 'Jogador 1', tiles: [], score: 0, drawsCount: 0, turnTimesSeconds: []}];
     const {bankTiles, players} = this.setPlayerInitTiles(initializedPlayers, emptyBankTiles);
 
     this.setState({

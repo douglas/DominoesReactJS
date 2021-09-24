@@ -12,27 +12,27 @@ class GameDetails extends Component {
     return (
       <div className='game-details'>
         <div className='mode-status'>
-          {this.props.isViewMode ? `View Mode` : `Game Mode`}
+          {this.props.isViewMode ? `Modo de Visualização` : `Modo de Jogo`}
         </div>
         <div className='game-moves'>
-          {`Moves: ${this.props.gameState.turnCount}/${this.props.totalTurnCount}`}
+          {`Movimentos: ${this.props.gameState.turnCount}/${this.props.totalTurnCount}`}
         </div>
         <div className='tiles-on-board'>
-          {`Tiles: ${this.props.usedTiles}/28`}
+          {`Dominós: ${this.props.usedTiles}/28`}
         </div>
         <div className='emptyDiv'/>
         <button className='history-back' onClick={() => this.props.goBackHistory()}
                 disabled={this.props.shouldDisableBackward}>
-          {this.props.isViewMode ? `Previous` : `Undo`}
+          {this.props.isViewMode ? `Anterior` : `Desfazer`}
         </button>
         <button className='history-forward' onClick={() => this.props.goForwardHistory()}
                 disabled={this.props.shouldDisableForward}
                 style={{visibility: this.props.isViewMode ? 'visible'  : 'hidden'}}>
-          {`Next`}
+          {`Próximo`}
         </button>
         <div className='game-reset'>
           <button className='game-reset-btn' onClick={() => this.props.resetGame()}>
-            {this.props.isViewMode ? `New Game` : `Reset Game`}
+            {this.props.isViewMode ? `Novo Jogo` : `Reiniciar Jogo`}
           </button>
         </div>
         <div className='emptyDiv'/>

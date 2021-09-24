@@ -22,16 +22,16 @@ class Player extends Component {
       <div className='player' data-id={this.state.id}>
         <div className='details'>
           <span className='title'>{this.state.name}</span>
-          <span className='score'>{`Score: ${this.props.score}`}</span>
-          <span className='draws'>{`Draws: ${this.props.drawsCount}`}</span>
-          <span className='avg-turn'>{`Avg time: ${parseInt(avgTurnTimeSeconds)}`}</span>
-          <div className='avatar'>
+          <span className='score'>{`Pontos: ${this.props.score}`}</span>
+          <span className='draws'>{`Dominós Utilizados: ${this.props.drawsCount}`}</span>
+          <span className='avg-turn'>{`Tempo médio: ${parseInt(avgTurnTimeSeconds)}`}</span>
+          {/* <div className='avatar'>
             <img src={imgAvatar} draggable="false"/>
-          </div>
+          </div> */}
           {!this.props.isGameEnded &&
           <button className='get-tile' onClick={() => this.props.getTileFromBank()}
                   disabled={!this.props.isAllowedToGetMoreTiles}>
-            {`Get Tile`}
+            {`Pegar Dominó`}
           </button>}
         </div>
         <div className='hand-deck'>
