@@ -322,7 +322,11 @@ class Game extends Component {
     const indexCurrentPlayer = this.getCurrentPlayerIndex();
     const {cells, players, tilesOnBoard} = this.state;
     const {tiles} = players[indexCurrentPlayer];
-    const {rightSideNum, leftSideNum, index} = this.state.draggedTile;
+    const {rightSideNum, leftSideNum, index, leftDominoText, rightDominoText} = this.state.draggedTile;
+
+    console.log(this.state.draggedTile);
+    console.log(droppedCellIndex);
+
     const isFirstDropped = tilesOnBoard.length === 0;
     const isEqualNumbersTile = leftSideNum === rightSideNum;
     const droppedCellDirection = cells[droppedCellIndex].direction;
@@ -334,6 +338,8 @@ class Game extends Component {
       draggable: false,
       cellIndex: droppedCellIndex,
       isVisible: true,
+      leftDominoText: leftDominoText,
+      rightDominoText: rightDominoText
     };
 
     if (isFirstDropped || this.isLegalDrop(cells, droppedCellIndex, newTile)) {
@@ -363,7 +369,7 @@ class Game extends Component {
   }
 
   isLegalDrop (cells, droppedCellIndex, newTile) {
-    const {rightSideNum, leftSideNum} = this.state.draggedTile;
+    const {rightSideNum, leftSideNum, index, leftDominoText, rightDominoText} = this.state.draggedTile;
 
     let legal = this.checkAlDroppedSides(cells, droppedCellIndex, rightSideNum, leftSideNum);
     if (legal)
@@ -373,6 +379,9 @@ class Game extends Component {
     if (legal) { // rotate tile
       newTile.rightSideNum = leftSideNum;
       newTile.leftSideNum = rightSideNum;
+      newTile.rightDominoText = leftDominoText;
+      newTile.leftDominoText = rightDominoText;
+
       return legal;
     }
 
