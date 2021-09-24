@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './player.css';
 import imgAvatar from '../images/hipster.png';
 import Tile from '../tile/tile.jsx';
 import { DIRECTIONS, MAX_PLAYER_HAND_TILES } from '../consts';
 
-class Player extends Component {
+class Player extends PureComponent {
   constructor (props) {
     super(props);
     this.state = {
