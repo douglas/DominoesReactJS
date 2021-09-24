@@ -7,7 +7,7 @@ const popup = (props) => {
     <div className='overlay'>
       <div className="popup-wrapper">
         <div className="popup-header">
-          <h3>Dominoes Notification</h3>
+          <h3>Notificações</h3>
           <span className="close-popup-btn" onClick={props.close}>x</span>
         </div>
         <div className="popup-body">

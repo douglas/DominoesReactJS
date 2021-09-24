@@ -307,7 +307,7 @@ class Game extends Component {
         this.updateHistory();
       });
 
-      this.openPopup(`Game is over! ${winnerPlayer.name} is the winner with a score of ${winnerPlayer.score} points!`);
+      this.openPopup(`Jogo acabou! ${winnerPlayer.name} é o vencedor com um total de ${winnerPlayer.score} pontos!`);
       return true;
     }
     return false;
@@ -315,7 +315,7 @@ class Game extends Component {
 
   onTileDropped (droppedCellIndex, event) {
     if (this.state.isGameEnded) {
-      this.openPopup('Game has ended, you can\'t make any moves!');
+      this.openPopup('O jogo acabou, você não pode fazer mais movimentos!');
       return;
     }
 
@@ -466,7 +466,7 @@ class Game extends Component {
         tile.isVisible = true;
       return tile;
     } else {
-      this.openPopup('No more tiles in bank!');
+      this.openPopup('Acabaram as peças de Dominó =(');
       return null;
     }
   }
@@ -483,7 +483,7 @@ class Game extends Component {
 
   getTileFromBank () {
     if (this.state.isGameEnded) {
-      this.openPopup('Game has ended, you can\'t request more tiles!');
+      this.openPopup('O jogo acabou pois as peças acabaram =(');
       return;
     }
 
