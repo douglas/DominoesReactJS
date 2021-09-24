@@ -17,7 +17,7 @@ class Player extends PureComponent {
   render () {
     let turnTimesSeconds = this.props.turnTimesSeconds;
     let avgTurnTimeSeconds = turnTimesSeconds.length === 0 ? 0 : turnTimesSeconds.reduce((a, b) => a + b, 0) / turnTimesSeconds.length;
-
+    
     return (
       <div className='player' data-id={this.state.id}>
         <div className='details'>
@@ -46,6 +46,8 @@ class Player extends PureComponent {
                   onTileStartDragging={this.props.onTileStartDragging}
                   rightSideNum={tile.rightSideNum}
                   leftSideNum={tile.leftSideNum}
+                  rightDominoText={tile.rightDominoText}
+                  leftDominoText={tile.leftDominoText}
                   direction={DIRECTIONS.vertical}
                   isVisible={tile.isVisible}
                 />

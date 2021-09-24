@@ -324,9 +324,6 @@ class Game extends Component {
     const {tiles} = players[indexCurrentPlayer];
     const {rightSideNum, leftSideNum, index, leftDominoText, rightDominoText} = this.state.draggedTile;
 
-    console.log(this.state.draggedTile);
-    console.log(droppedCellIndex);
-
     const isFirstDropped = tilesOnBoard.length === 0;
     const isEqualNumbersTile = leftSideNum === rightSideNum;
     const droppedCellDirection = cells[droppedCellIndex].direction;
@@ -467,6 +464,108 @@ class Game extends Component {
     return this.state.turnCount % this.state.players.length;
   }
 
+  textForDots (dotsNumber) {
+    switch(dotsNumber) {
+      case 0:
+        var caracteristicas = [
+          'carboidrato',
+          'músculos esqueléticos',
+          'trabalho mecânico',
+          'coração',
+          'esportes',
+          'glicose',
+          'proteínas'
+        ];
+        return caracteristicas[Math.floor(Math.random() * caracteristicas.length)]
+      case 1:
+        var caracteristicas = [
+          'respiração',
+          'inspiração',
+          'expiração',
+          'pulmão',
+          'estômatos',
+          'brônqueos',
+          'folha'
+        ];
+        return caracteristicas[Math.floor(Math.random() * caracteristicas.length)]
+      case 2:
+        var caracteristicas = [
+          'hormônios',
+          'auxina',
+          'giberelina',
+          'citocinina',
+          'insulina',
+          'prolactina',
+          'adrenalina'
+        ];
+        return caracteristicas[Math.floor(Math.random() * caracteristicas.length)]
+      case 3:
+        var caracteristicas = [
+          'célula animal',
+          'célula vegetal',
+          'citoplasma',
+          'parede celular',
+          'organelas',
+          'ribossomos',
+          'núcleo'
+        ];
+        return caracteristicas[Math.floor(Math.random() * caracteristicas.length)]
+      case 4:
+        var caracteristicas = [
+          'tecido',
+          'esclerêquima',
+          'esqueleto',
+          'cartilagem',
+          'tendões',
+          'orgãos'
+        ];
+        return caracteristicas[Math.floor(Math.random() * caracteristicas.length)]
+      case 5:
+        var caracteristicas = [
+          'útero',
+          'assexuada',
+          'embrião',
+          'feto',
+          'sexuada',
+          'gametas'
+        ];
+        return caracteristicas[Math.floor(Math.random() * caracteristicas.length)]
+      case 6:
+        var caracteristicas = [
+          'xilema',
+          'floema',
+          'seiva bruta',
+          'seiva elaborada',
+          'intestino delgado',
+          'transporte pelo sangue'
+        ];
+        return caracteristicas[Math.floor(Math.random() * caracteristicas.length)]
+      default:
+        return "   ";
+    }
+  }
+
+  textForBombPiece (dotsNumber) {
+    switch(dotsNumber) {
+      case 0:
+        return "Transporte de nutrientes e gases"
+      case 1:
+        return "Respiração e transpiração"
+      case 2:
+        return "Hormônios"
+      case 3:
+        return "Células"
+      case 4:
+        return "Sustentação"
+      case 5:
+        return "Reprodução (sistema genital)"
+      case 6:
+        return "Produção e consumo de energia"
+      default:
+        return "   ";
+    }
+  }
+
   popRandomTile (tilesArr, setVisible = true) {
     if (tilesArr.length > 0) {
       const randomIndex = Math.floor(Math.random() * tilesArr.length);
@@ -484,7 +583,12 @@ class Game extends Component {
     const bankTiles = [];
     for (let i = 0; i <= MAX_TILE_DOT_NUMBER; i++) {
       for (let j = i; j <= MAX_TILE_DOT_NUMBER; j++) {
-        bankTiles.push({rightSideNum: i, leftSideNum: j, used: false, isVisible: false},);
+        if (i == j) {
+          var bombPieceText = this.textForBombPiece(i);
+          bankTiles.push({rightSideNum: i, leftSideNum: j, rightDominoText: bombPieceText, leftDominoText: bombPieceText, used: false, isVisible: false},);
+        } else {
+          bankTiles.push({rightSideNum: i, leftSideNum: j, rightDominoText: this.textForDots(i), leftDominoText: this.textForDots(j), used: false, isVisible: false},);
+        }
       }
     }
     return bankTiles;
