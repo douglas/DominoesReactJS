@@ -2,7 +2,7 @@
     font-family: Verdana,Geneva,sans-serif;
     display: grid;
     grid-template-columns: repeat(20, 210px);
-    grid-template-rows: repeat(20, 145px);
+    grid-template-rows: repeat(40, 145px);
     width: 2200px;
-    height: 2200px;
+    height: 4400px;
 }
